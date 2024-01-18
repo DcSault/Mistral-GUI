@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox Glassmorphism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chatbox">
+        <div class="chatbox-header">
+            Chatbox
+        </div>
+        <div class="chatbox-body" id="chatbox-body">
+            <!-- Les messages apparaîtront ici -->
+        </div>
+        <div class="chatbox-footer">
+            <select id="model-select">
+                <option value="mistral-tiny">Tiny</option>
+                <option value="mistral-small">Small</option>
+                <option value="mistral-medium">Medium</option>
+                <option value="mistral-embed">Embed</option>
+            </select>
+            <input type="text" id="chat-input" placeholder="Tapez votre message ici...">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

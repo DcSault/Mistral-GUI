@@ -1,0 +1,103 @@
+/* Style du corps (body) de la page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0; /* Couleur de fond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Hauteur de la vue à 100% */
+  margin: 0; /* Aucune marge extérieure */
+}
+
+/* Style du conteneur carré */
+.container {
+  width: 300px; /* Largeur du conteneur carré */
+  height: 300px; /* Hauteur du conteneur carré */
+  background: rgba(255, 255, 255, 0.1); /* Fond transparent */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  border-radius: 15px; /* Bord arrondi pour l'effet glassmorphism */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style de la boîte du chatbox carré à l'intérieur du conteneur */
+.chatbox {
+  width: 80%; /* Largeur du chatbox carré */
+  height: 80%; /* Hauteur du chatbox carré */
+  background: rgba(255, 255, 255, 0.2); /* Fond transparent */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  border-radius: 25px; /* Bord arrondi plus grand */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style de l'en-tête du chatbox */
+.chatbox-header {
+  background: rgba(255, 255, 255, 0.4); /* Fond semi-transparent */
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Style du corps du chatbox */
+.chatbox-body {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Style du pied de page du chatbox */
+.chatbox-footer {
+  background: rgba(255, 255, 255, 0.4); /* Fond semi-transparent */
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Style des éléments d'entrée dans le pied de page */
+.chatbox-footer input, .chatbox-footer select {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 25px; /* Bord arrondi plus grand */
+  outline: none;
+}
+
+/* Style du bouton d'envoi dans le pied de page */
+.chatbox-footer button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px; /* Bord arrondi plus grand */
+  background-color: #0078d4;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s; /* Transition sur l'arrière-plan et l'opacité */
+}
+
+/* Effet de survol transparent sur les boutons */
+.chatbox-footer button:hover {
+  background-color: rgba(0, 120, 212, 0.8); /* Fond semi-transparent au survol */
+  opacity: 0.9; /* Légère réduction de l'opacité au survol */
+}
+
+/* Style des messages dans le chatbox */
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 15px; /* Bord arrondi légèrement plus grand */
+  background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+}
+
+/* Style des messages de l'utilisateur */
+.message.user {
+  text-align: right;
+}
+
+/* Style des messages du bot */
+.message.bot {
+  text-align: left;
+}
