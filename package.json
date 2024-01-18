@@ -1,13 +1,13 @@
 {
-  "name": "mistral-api",
+  "name": "mistral-gui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Gui interface for Mistral AI",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js" 
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["mistral", "gui", "ai", "interface"], 
+  "author": "NotSault",
   "license": "ISC",
   "dependencies": {
     "@mistralai/mistralai": "^0.0.8",
