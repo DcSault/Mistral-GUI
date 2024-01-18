@@ -5,13 +5,13 @@ function sendMessage() {
     const selectedModel = modelSelect.value;
     inputField.value = '';
 
-    if (!userMessage) return; // Si le message est vide, ne rien faire
+    if (!userMessage) return; 
 
-    appendMessage(userMessage, 'user'); // Ajouter le message de l'utilisateur à la chatbox
+    appendMessage(userMessage, 'user'); 
 
-    const sessionId = getSessionId(); // Récupérer ou générer le sessionId
+    const sessionId = getSessionId(); 
 
-    // Préparer la requête avec sessionId
+    
     const requestData = {
         sessionId: sessionId,
         message: userMessage,
@@ -24,7 +24,7 @@ function sendMessage() {
         body: JSON.stringify(requestData),
     })
     .then(response => response.ok ? response.json() : Promise.reject('Réponse réseau non OK'))
-    .then(data => appendMessage(data.reply, 'bot')) // Ajouter la réponse à la chatbox
+    .then(data => appendMessage(data.reply, 'bot')) 
     .catch(error => {
         console.error('Erreur:', error);
         appendMessage('Erreur de communication.', 'bot');
@@ -37,7 +37,7 @@ function appendMessage(message, sender) {
     messageDiv.classList.add('message', sender);
     messageDiv.textContent = message;
     chatBody.appendChild(messageDiv);
-    chatBody.scrollTop = chatBody.scrollHeight; // Faire défiler vers le bas
+    chatBody.scrollTop = chatBody.scrollHeight; 
 }
 
 function getSessionId() {

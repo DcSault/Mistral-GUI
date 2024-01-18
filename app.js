@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 
-let MistralClient; // Global variable for MistralClient
+let MistralClient; 
 
 // Dynamically import MistralClient
 import('@mistralai/mistralai').then(({ default: Client }) => {
@@ -12,12 +12,12 @@ import('@mistralai/mistralai').then(({ default: Client }) => {
 });
 
 const app = express();
-const port = process.env.PORT || 3000; // Use port from environment or 3000 as default
+const port = process.env.PORT || 3000; 
 
 app.use(express.json()); // Middleware to parse JSON
-app.use(express.static('public')); // Serve static files from 'public' directory
+app.use(express.static('public')); 
 
-const sessions = {}; // Store conversation history
+const sessions = {}; 
 
 // Route to handle chat requests
 app.post('/chat', async (req, res) => {
@@ -68,7 +68,7 @@ app.post('/chat', async (req, res) => {
   
       if (chatResponse.choices && chatResponse.choices.length > 0) {
         replyContent = chatResponse.choices[0].message.content;
-        sessions[sessionId][sessions[sessionId].length - 1].content = replyContent; // Mettre à jour le dernier message de la session
+        sessions[sessionId][sessions[sessionId].length - 1].content = replyContent;
         res.json({ reply: replyContent });
       } else {
         throw new Error('Réponse invalide ou manquante de Mistral');
